@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bro - Teen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #4CAF50; /* Forest green background */
+            font-family: 'Venus Rising', Arial, sans-serif;
+            color: #fff; /* White text */
+        }
+        .navbar {
+            background-color: #4CAF50; /* Forest green for navbar */
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure navbar is on top */
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+        }
+        .navbar img {
+            height: 40px; /* Adjust logo height as needed */
+            margin: 10px; /* Add some margin around the logo */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #2e8b57; /* Slightly darker green hover effect */
+        }
+        .container {
+            padding-top: 60px; /* Add padding to push content below navbar */
+            text-align: center;
+            background-color: #4CAF50; /* Forest green background */
+            padding-bottom: 100px; /* Add padding to the bottom */
+        }
+        h1 {
+            font-size: 3em; /* Larger font size for heading */
+            font-weight: 600;
+            margin-top: 100px; /* Increased margin top */
+        }
+        h2 {
+            font-size: 2em; /* Subheading font size */
+            font-weight: 500;
+            color: #fff; /* White text */
+            margin-bottom: 20px; /* Margin below subheading */
+        }
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            justify-content: center;
+            margin: 0 -10px; /* Adjusted margin */
+        }
+        .gallery img {
+            max-height: 250px; /* Adjusted maximum height */
+            margin: 20px 10px; /* Adjusted margin */
+            transition: transform 0.3s ease-in-out; /* Smooth transition for transform */
+        }
+        .gallery img:hover {
+            transform: scale(1.2); /* Enlarge the image on hover */
+        }
+        .contact-section {
+            background-color: #408140; /* Slightly darker green background for contact section */
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .contact-section h2 {
+            margin-top: 0;
+            color: #fff; /* White text for contact section heading */
+        }
+        .contact-item {
+            margin-bottom: 10px;
+            color: #fff; /* White text for contact items */
+        }
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .social-links a:hover {
+            color: #FFD700; /* Gold color on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="Bro-teen.png" alt="Bro-Teen Logo">
+        <a href="Bro-Teen Webpage.html">Home</a>
+        <a href="flavours.html">Flavours</a>
+        <a href="Stats.html">Stats</a> <!-- Added link for Stats page -->
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <h1>Bro - Teen</h1>
+        <p>Be a Pro Teen with Bro-Teen</p>
+        <h2>Our 5 Most Popular Choices</h2>
+        <!-- Gallery -->
+        <div class="gallery">
+            <img src="Pro-Teen shake choc.png" alt="Mango">
+            <img src="Pro-Teen shake malt.png" alt="Malt Shake">
+            <img src="Pro-Teen shake swirl.png" alt="Strawberry shake">
+            <img src="Pro-Teen shake choc_chunk.jpeg" alt="Chocolate Chunk Shake">
+            <img src="Pro-Teen shake banana.png" alt="Banana Shake">
+        </div>
+    </div>
+
+    <!-- Contact section -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-item">
+            Email: <a href="mailto:bro-teenpower@bishopveseys.bham.sch.uk">bro-teenpower@bishopveseys.bham.sch.uk</a>
+        </div>
+        <div class="contact-item">Phone: +1234567890</div>
+        <div class="contact-item">Fax: +1234567890</div>
+        <!-- Social media links -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/BroTeenPower" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/BroTeenPower" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/user/BroTeenPowerYT" target="_blank">YouTube</a>
+        </div>
+    </div>
+</body>
+</html>
+

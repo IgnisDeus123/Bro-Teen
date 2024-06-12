@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bro - Teen Flavours</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #4CAF50; /* Forest green background */
+            font-family: 'Venus Rising', Arial, sans-serif;
+            color: #fff; /* White text */
+        }
+        .navbar {
+            background-color: #4CAF50; /* Forest green for navbar */
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure navbar is on top */
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+        }
+        .navbar img {
+            height: 40px; /* Adjust logo height as needed */
+            margin: 10px; /* Add some margin around the logo */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #2e8b57; /* Slightly darker green hover effect */
+        }
+        .container {
+            padding-top: 60px; /* Add padding to push content below navbar */
+            text-align: center;
+            background-color: #4CAF50; /* Forest green background */
+            padding-bottom: 100px; /* Add padding to the bottom */
+        }
+        h1 {
+            font-size: 3em; /* Larger font size for heading */
+            font-weight: 600;
+            margin-top: 100px; /* Increased margin top */
+        }
+        h2 {
+            font-size: 2em; /* Subheading font size */
+            font-weight: 500;
+            color: #fff; /* White text */
+            margin-bottom: 20px; /* Margin below subheading */
+        }
+        .flavour-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center; /* Center the list items */
+        }
+        .flavour-list li {
+            margin-bottom: 10px;
+            color: #fff; /* White color for better readability */
+        }
+        .flavour-button {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .info-window {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Drop shadow effect */
+            z-index: 1000; /* Ensure the info window is on top */
+        }
+        .info-window h2 {
+            color: #000; /* Black text for heading */
+        }
+        .info-window p {
+            color: #333; /* Darker gray text for description */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="Bro-teen.png" alt="Bro-Teen Logo">
+        <a href="Bro-Teen Webpage.html">Home</a>
+        <a href="flavours.html">Flavours</a>
+        <a href="Stats.html">Stats</a> <!-- Added link for Stats page -->
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <h1>Bro - Teen Flavours</h1>
+        <ul class="flavour-list">
+            <li><button class="flavour-button" onclick="showInfo('Banana Blitz')">Banana Blitz</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Strawberry Swirl')">Strawberry Swirl</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Blueberry Blast')">Blueberry Blast</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Chocolate Chunks')">Chocolate Chunks</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Vanilla Vibez')">Vanilla Vibez</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Peanut Butter Powerhouse')">Peanut Butter Powerhouse</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Nutty Nirvana')">Nutty Nirvana</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Raspberry Richness')">Raspberry Richness</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Mango Mania')">Mango Mania</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Coconut Craze')">Coconut Craze</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Lemon & Lime Lift')">Lemon & Lime Lift</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Cherry Charge')">Cherry Charge</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Blackberry Burst')">Blackberry Burst</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Mega Minty')">Mega Minty</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Snickers Satisfaction')">Snickers Satisfaction</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Malteser Marvel')">Malteser Marvel</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Pineapple Paradise')">Pineapple Paradise</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Kiwi Kick')">Kiwi Kick</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Grapefruit Glory')">Grapefruit Glory</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Oreo Opportunity')">Oreo Opportunity</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Avocado Amazement')">Avocado Amazement</button></li>
+            <li><button class="flavour-button" onclick="showInfo('Melon Motivation')">Melon Motivation</button></li>
+        </ul>
+    </div>
+
+    <!-- Information Window -->
+    <div id="infoWindow" class="info-window" style="display: none;">
+        <h2 id="flavourName"></h2>
+        <p id="flavourDescription"></p>
+    </div>
+
+    <script>
+        function showInfo(flavour) {
+            let description = "";
+            switch (flavour) {
+                case "Banana Blitz":
+                    description = "A delightful blend of ripe bananas, perfect for those who love the taste of fresh fruit.";
+                    break;
+                case "Strawberry Swirl":
+                    description = "Creamy and sweet, this strawberry-flavored shake is like a taste of summer in every sip.";
+                    break;
+                case "Blueberry Blast":
+                    description = "Packed with antioxidants, this blueberry shake is as healthy as it is delicious.";
+                    break;
+                case "Chocolate Chunks":
+                    description = "The most popular (predicted) flavour, indulge your sweet tooth with this rich and creamy chocolate shake, loaded with chunks of chocolate.";
+                    break;
+                case "Vanilla Vibez":
+                    description = "Classic and timeless, this vanilla shake is smooth, creamy, and oh-so-delicious.";
+                    break;
+                case "Peanut Butter Powerhouse":
+                    description = "Get a protein boost with this peanut butter-flavored shake, perfect for after workouts or as a meal replacement.";
+                    break;
+                case "Nutty Nirvana":
+                    description = "For nut lovers everywhere, this shake combines the rich flavors of peanuts, almonds, and cashews for a truly nutty experience.";
+                    break;
+                case "Raspberry Richness":
+                    description = "Sweet and tangy, this raspberry shake is bursting with flavor and packed with vitamins.";
+                    break;
+                case "Mango Mania":
+                    description = "Escape to the tropics with this mango-flavored shake, made with real mangoes for an authentic taste.";
+                    break;
+                case "Coconut Craze":
+                    description = "Creamy and exotic, this coconut shake will transport you to a tropical paradise with every sip.";
+                    break;
+                case "Lemon & Lime Lift":
+                    description = "Refreshing and zesty, this lemon and lime shake is like a burst of sunshine on a cloudy day.";
+                    break;
+                case "Cherry Charge":
+                    description = "Bold and fruity, this cherry-flavored shake is perfect for those who crave something a little different.";
+                    break;
+                case "Blackberry Burst":
+                    description = "Tart and juicy, this blackberry shake is a delicious way to enjoy the bold flavors of summer.";
+                    break;
+                case "Mega Minty":
+                    description = "Cool and refreshing, this mint-flavored shake is like a breath of fresh air on a hot day.";
+                    break;
+                case "Snickers Satisfaction":
+                    description = "Indulge your cravings with this Snickers-inspired shake, loaded with caramel, peanuts, and chocolate.";
+                    break;
+                case "Malteser Marvel":
+                    description = "Crunchy and delicious, this Malteser shake is perfect for those who love a little texture in their drinks.";
+                    break;
+                case "Pineapple Paradise":
+                    description = "Escape to a tropical island with this pineapple-flavored shake, made with real pineapple for an authentic taste.";
+                    break;
+                case "Kiwi Kick":
+                    description = "Tangy and sweet, this kiwi shake is like a burst of flavor in every sip.";
+                    break;
+                case "Grapefruit Glory":
+                    description = "Wake up your taste buds with this grapefruit-flavored shake, perfect for those who love a little tartness in their drinks.";
+                    break;
+                case "Oreo Opportunity":
+                    description = "For chocolate lovers everywhere, this Oreo shake is like a dream come true, with chunks of cookie in every sip.";
+                    break;
+                case "Avocado Amazement":
+                    description = "Creamy and delicious, this avocado shake is perfect for those who love a little healthy fat in their drinks.";
+                    break;
+                case "Melon Motivation":
+                    description = "Light and refreshing, this melon-flavored shake is the perfect pick-me-up on a hot day.";
+                    break;
+                default:
+                    description = "Sorry, we don't have information for this flavour at the moment.";
+            }
+            
+            document.getElementById("flavourName").textContent = flavour;
+            document.getElementById("flavourDescription").textContent = description;
+            document.getElementById("infoWindow").style.display = "block";
+        }
+
+        // Close the info window if anywhere outside the window is clicked
+        window.onclick = function(event) {
+            var infoWindow = document.getElementById("infoWindow");
+            if (event.target == infoWindow) {
+                infoWindow.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

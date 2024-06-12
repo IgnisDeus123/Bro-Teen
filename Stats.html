@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats - Bro Teen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #4CAF50; /* Forest green background */
+            font-family: 'Venus Rising', Arial, sans-serif;
+            color: #fff; /* White text */
+        }
+        .navbar {
+            background-color: #4CAF50; /* Forest green for navbar */
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure navbar is on top */
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+        }
+        .navbar img {
+            height: 40px; /* Adjust logo height as needed */
+            margin: 10px; /* Add some margin around the logo */
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #2e8b57; /* Slightly darker green hover effect */
+        }
+        /* Add your stats page specific styles below */
+        .container {
+            text-align: center;
+            margin-top: 100px; /* Adjusted margin top to make space for navbar */
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        table {
+            margin: 0 auto; /* Center the table */
+        }
+        canvas {
+            margin-top: 20px;
+        }
+        .contact-section {
+            background-color: #408140; /* Slightly darker green background for contact section */
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            margin-top: 50px; /* Adjusted margin top */
+        }
+        .contact-section h2 {
+            margin-top: 0;
+            color: #fff; /* White text for contact section heading */
+        }
+        .contact-item {
+            margin-bottom: 10px;
+            color: #fff; /* White text for contact items */
+        }
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+        .social-links a:hover {
+            color: #FFD700; /* Gold color on hover */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <img src="Bro-teen.png" alt="Bro-Teen Logo">
+        <a href="Bro-Teen Webpage.html">Home</a>
+        <a href="flavours.html">Flavours</a>
+        <a href="Stats.html">Stats</a>
+    </div>
+
+    <!-- Product Pricing -->
+    <div class="container">
+        <h1>Product Pricing</h1>
+        <table>
+            <tr>
+                <th>Size</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>250ml bottle</td>
+                <td>£1.49</td>
+            </tr>
+            <tr>
+                <td>500ml bottle</td>
+                <td>£2.49</td>
+            </tr>
+            <tr>
+                <td>750ml bottle</td>
+                <td>£2.99</td>
+            </tr>
+        </table>
+
+        <!-- Heading for the popularity graph -->
+        <h1>Predicted Popularity of Bro-Teen</h1>
+
+        <!-- Compound Bar Chart -->
+        <canvas id="salesChart" width="800" height="400"></canvas>
+    </div>
+
+    <!-- Contacts Section -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <div class="contact-item">
+            Email: <a href="mailto:bro-teenpower@bishopveseys.bham.sch.uk">bro-teenpower@bishopveseys.bham.sch.uk</a>
+        </div>
+        <div class="contact-item">Phone: +1234567890</div>
+        <div class="contact-item">Fax: +1234567890</div>
+        <!-- Social media links -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/BroTeenPower" target="_blank">Instagram</a>
+            <a href="https://www.facebook.com/BroTeenPower" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/user/BroTeenPowerYT" target="_blank">YouTube</a>
+        </div>
+    </div>
+
+    <!-- JavaScript for Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Sample data for flavors
+        const flavors = ['Banana Blitz', 'Strawberry Swirl', 'Blueberry Blast', 'Chocolate Chunks', 'Vanilla Vibez'];
+
+        // Generate random sales values for each flavor
+        const getRandomSales = () => {
+            return flavors.map(() => {
+                return Array.from({ length: 12 }, () => Math.floor(Math.random() * 100));
+            });
+        };
+
+        const sales = getRandomSales();
+
+        // Create a compound bar chart
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        const salesChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], // Labels for each month
+                datasets: sales.map((flavor, index) => ({
+                    label: flavors[index],
+                    data: flavor,
+                    backgroundColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.5)`, // Random color for each flavor
+                    borderColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 1)`, // Random border color for each flavor
+                    borderWidth: 1
+                }))
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
